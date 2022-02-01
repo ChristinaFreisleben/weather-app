@@ -41,6 +41,11 @@ p.detail-nav {
   margin-top: -40px;
 }
 
+#current-city-button:hover {
+  border: 2px solid rgba(100, 148, 237, 70%);
+  background-color: rgba(100, 148, 237, 10%);
+}
+
 #current-city.button:hover {
   text-decoration: underline;
 }
