@@ -1,0 +1,118 @@
+body {
+  font-family: "Nunito", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: cornflowerblue;
+}
+
+h1,
+.weatherdetails,
+.date,
+.temperature {
+  margin-left: 20px;
+}
+
+h1 {
+  margin-top: 30px;
+}
+
+form {
+  margin-left: 65%;
+  margin-top: -42px;
+}
+
+p.detail-nav {
+  margin-left: 20px;
+  font-size: 15px;
+}
+
+#current-city-button {
+  display: inline;
+  background-color: #fff;
+  border: 2px solid rgba(100, 148, 237, 70%);
+  border-radius: 5px;
+  margin-right: 20px;
+  margin-top: -40px;
+}
+
+#current-city.button:hover {
+  text-decoration: underline;
+}
+
+#search-button {
+  background-color: #fff;
+  border: 2px solid rgba(100, 148, 237, 70%);
+  border-radius: 5px;
+}
+
+#search-button:hover {
+  border: 2px solid rgba(100, 148, 237, 70%);
+  background-color: rgba(100, 148, 237, 10%);
+}
+.defaultCities {
+  margin-right: 200px;
+}
+
+#celcius:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+#fahrenheit:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.lead-emoji {
+  font-size: 100px;
+}
+
+.forecast-emoji {
+  color: grey;
+  font-size: 20px;
+}
+
+.card {
+  margin: 100px auto;
+  background-color: #fff;
+}
+.navbar {
+  padding: 0;
+}
+
+.container-fluid {
+  margin: 0;
+  padding: 0;
+  background-color: #fff;
+  font-size: 30px;
+}
+
+.menu {
+  font-size: smaller;
+}
+
+.menu:hover {
+  cursor: pointer;
+}
+.row-cols-5 {
+  text-align: center;
+}
+
+.weatherdetails {
+  font-size: smaller;
+  margin-bottom: 30px;
+}
+
+.fa-cloud-sun {
+  color: #ffb611;
+}
+
+.fa-snowflake {
+  color: lightskyblue;
+}
