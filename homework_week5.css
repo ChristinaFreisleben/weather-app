@@ -74,6 +74,10 @@ p.detail-nav {
   text-decoration: underline;
 }
 
+#source-code {
+  text-align: center;
+}
+
 .lead-emoji {
   font-size: 100px;
 }
