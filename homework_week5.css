@@ -1,5 +1,6 @@
 body {
   font-family: "Nunito", sans-serif;
+  color: #f9f9f9;
 }
 
 h1,
@@ -8,7 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: cornflowerblue;
+  color: #ff7a8a;
 }
 
 h1,
@@ -46,7 +47,8 @@ p.detail-nav {
 
 #current-city-button {
   display: inline;
-  background-color: #fff;
+  background-color: #062743;
+  color: #ff7a8a;
   border: none;
   margin-right: 20px;
   margin-left: -8px;
@@ -57,20 +59,18 @@ p.detail-nav {
   text-decoration: underline;
 }
 
-#current-city.button:hover {
-  text-decoration: underline;
-}
-
 #search-button {
-  background-color: #fff;
-  border: 2px solid rgba(100, 148, 237, 70%);
+  border: 2px solid rgba(255, 122, 138);
+  background-color: rgba(255, 255, 255, 50%);
   border-radius: 5px;
 }
 
 #search-button:hover {
-  border: 2px solid rgba(100, 148, 237, 70%);
-  background-color: rgba(100, 148, 237, 10%);
+  border: 2px solid rgba(255, 122, 138, 70%);
+  background-color: rgba(255, 122, 138);
+  transition: all 200ms ease-in-out;
 }
+
 .defaultCities {
   margin-right: 200px;
 }
@@ -87,6 +87,7 @@ p.detail-nav {
 
 #source-code {
   text-align: center;
+  color: #113a5d;
 }
 
 .lead-emoji {
@@ -100,7 +101,7 @@ p.detail-nav {
 
 .card {
   margin: 100px auto;
-  background-color: #fff;
+  background-color: #062743;
 }
 
 .row-cols-5 {
