@@ -20,11 +20,23 @@ h1,
 
 h1 {
   margin-top: 30px;
+  text-transform: capitalize;
 }
 
 form {
   margin-left: 65%;
   margin-top: -42px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  margin-left: 0;
+  padding: 0;
 }
 
 p.detail-nav {
@@ -35,15 +47,14 @@ p.detail-nav {
 #current-city-button {
   display: inline;
   background-color: #fff;
-  border: 2px solid rgba(100, 148, 237, 70%);
-  border-radius: 5px;
+  border: none;
   margin-right: 20px;
+  margin-left: -8px;
   margin-top: -40px;
 }
 
 #current-city-button:hover {
-  border: 2px solid rgba(100, 148, 237, 70%);
-  background-color: rgba(100, 148, 237, 10%);
+  text-decoration: underline;
 }
 
 #current-city.button:hover {
