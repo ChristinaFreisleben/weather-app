@@ -35,54 +35,59 @@ let currentTime = document.querySelector("#current-time");
 
 currentTime.innerHTML = `${hour}:${minutes}`;
 
-let searchForm = document.querySelector("#search-form");
+function showWeatherData(response) {
+  let apiCity = response.data.name;
+  let city = document.querySelector("#city");
+  city.innerHTML = apiCity;
 
-function changeCity(event) {
-  event.preventDefault();
-  let input = document.querySelector("#city-input");
-  let currentCity = document.querySelector("#current-city");
-  currentCity.innerHTML = `<strong>${input.value}</strong>`;
+  let apiCelciusTemperature = Math.round(response.data.main.temp);
+  let celciusTemperature = document.querySelector("#temperature");
+  celciusTemperature.innerHTML = apiCelciusTemperature;
 
+  let apiDescription = response.data.weather[0].description;
+  let description = document.querySelector("#description");
+  description.innerHTML = apiDescription;
+
+  let apiHumidity = Math.round(response.data.main.humidity);
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = apiHumidity;
+
+  let apiWind = Math.round(response.data.wind.speed);
+  let wind = document.querySelector("#wind");
+  wind.innerHTML = apiWind;
+
+  let apiTempMax = Math.round(response.data.main.temp_max);
+  let tempMax = document.querySelector("#temp-max");
+  tempMax.innerHTML = apiTempMax;
+
+  let apiTempMin = Math.round(response.data.main.temp_min);
+  let tempMin = document.querySelector("#temp-min");
+  tempMin.innerHTML = apiTempMin;
+
+  let icon = document.querySelector("#lead-emoji");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+}
+
+function search(city) {
   let apiKey = "cc9d95ff70494e22ebe5e4ea828d0369";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=${apiKey}&units=metric`;
-
-  function showWeatherData(response) {
-    console.log(response.data);
-    let apiCelciusTemperature = Math.round(response.data.main.temp);
-    let celciusTemperature = document.querySelector("#temperature");
-    celciusTemperature.innerHTML = apiCelciusTemperature;
-
-    let apiDescription = response.data.weather[0].description;
-    let description = document.querySelector("#description");
-    description.innerHTML = apiDescription;
-
-    let apiHumidity = Math.round(response.data.main.humidity);
-    let humidity = document.querySelector("#humidity");
-    humidity.innerHTML = apiHumidity;
-
-    let apiWind = Math.round(response.data.wind.speed);
-    let wind = document.querySelector("#wind");
-    wind.innerHTML = apiWind;
-
-    let apiTempMax = Math.round(response.data.main.temp_max);
-    let tempMax = document.querySelector("#temp-max");
-    tempMax.innerHTML = apiTempMax;
-
-    let apiTempMin = Math.round(response.data.main.temp_min);
-    let tempMin = document.querySelector("#temp-min");
-    tempMin.innerHTML = apiTempMin;
-
-    let icon = document.querySelector("#lead-emoji");
-    icon.setAttribute(
-      "src",
-      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
-    );
-  }
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showWeatherData);
 }
 
-searchForm.addEventListener("submit", changeCity);
+function handleSubmit(event) {
+  event.preventDefault();
+  let cityInput = document.querySelector("#city-input");
+  search(cityInput.value);
+}
+
+search("Vienna");
+
+let searchForm = document.querySelector("#search-form");
+searchForm.addEventListener("submit", handleSubmit);
 
 function showCurrentCity(event) {
   function showPosition(position) {
