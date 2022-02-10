@@ -52,6 +52,10 @@ function changeCity(event) {
     let celciusTemperature = document.querySelector("#temperature");
     celciusTemperature.innerHTML = apiCelciusTemperature;
 
+    let apiDescription = response.data.weather[0].description;
+    let description = document.querySelector("#description");
+    description.innerHTML = apiDescription;
+
     let apiHumidity = Math.round(response.data.main.humidity);
     let humidity = document.querySelector("#humidity");
     humidity.innerHTML = apiHumidity;
@@ -67,6 +71,12 @@ function changeCity(event) {
     let apiTempMin = Math.round(response.data.main.temp_min);
     let tempMin = document.querySelector("#temp-min");
     tempMin.innerHTML = apiTempMin;
+
+    let icon = document.querySelector("#lead-emoji");
+    icon.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
   }
 
   axios.get(apiUrl).then(showWeatherData);

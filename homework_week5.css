@@ -45,9 +45,13 @@ p.detail-nav {
   font-size: 15px;
 }
 
+div.col-4 {
+  margin-left: -25px;
+}
+
 #current-city-button {
   display: inline;
-  background-color: #062743;
+  background-color: rgb(9, 54, 94);
   color: #ff7a8a;
   border: none;
   margin-right: 20px;
@@ -71,10 +75,6 @@ p.detail-nav {
   transition: all 200ms ease-in-out;
 }
 
-.defaultCities {
-  margin-right: 200px;
-}
-
 #celcius:hover {
   cursor: pointer;
   text-decoration: underline;
@@ -85,13 +85,22 @@ p.detail-nav {
   text-decoration: underline;
 }
 
+#description:first-letter {
+  text-transform: capitalize;
+}
+
 #source-code {
   text-align: center;
   color: #113a5d;
 }
 
-.lead-emoji {
+#lead-emoji {
   font-size: 100px;
+  color: #f9f9f9;
+}
+
+.defaultCities {
+  margin-right: 200px;
 }
 
 .forecast-emoji {
@@ -101,7 +110,7 @@ p.detail-nav {
 
 .card {
   margin: 100px auto;
-  background-color: #062743;
+  background-color: rgb(9, 54, 94);
 }
 
 .row-cols-5 {
