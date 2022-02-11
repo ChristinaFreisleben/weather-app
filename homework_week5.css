@@ -40,6 +40,23 @@ li {
   padding: 0;
 }
 
+a {
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ff7a8a;
+}
+
+a.active {
+  color: #ff7a8a;
+}
+
+a.active:hover {
+  cursor: default;
+}
+
 p.detail-nav {
   margin-left: 20px;
   font-size: 15px;
@@ -96,11 +113,6 @@ div.col-4 {
 
 #units {
   font-size: 20px;
-}
-
-#fahrenheit-link {
-  color: #ff7a8a;
-  text-decoration: none;
 }
 
 .defaultCities {
