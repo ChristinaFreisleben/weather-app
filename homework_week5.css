@@ -94,9 +94,13 @@ div.col-4 {
   color: #113a5d;
 }
 
-#lead-emoji {
-  font-size: 100px;
-  color: #f9f9f9;
+#units {
+  font-size: 20px;
+}
+
+#fahrenheit-link {
+  color: #ff7a8a;
+  text-decoration: none;
 }
 
 .defaultCities {

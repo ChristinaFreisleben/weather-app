@@ -40,7 +40,11 @@ function showWeatherData(response) {
   let city = document.querySelector("#city");
   city.innerHTML = apiCity;
 
-  let apiCelciusTemperature = Math.round(response.data.main.temp);
+  defaultTemperature = response.data.main.temp;
+  defaultTemperatureHigh = response.data.main.temp_max;
+  defaultTemperatureLow = response.data.main.temp_min;
+
+  let apiCelciusTemperature = Math.round(defaultTemperature);
   let celciusTemperature = document.querySelector("#temperature");
   celciusTemperature.innerHTML = apiCelciusTemperature;
 
@@ -56,11 +60,11 @@ function showWeatherData(response) {
   let wind = document.querySelector("#wind");
   wind.innerHTML = apiWind;
 
-  let apiTempMax = Math.round(response.data.main.temp_max);
+  let apiTempMax = Math.round(defaultTemperatureHigh);
   let tempMax = document.querySelector("#temp-max");
   tempMax.innerHTML = apiTempMax;
 
-  let apiTempMin = Math.round(response.data.main.temp_min);
+  let apiTempMin = Math.round(defaultTemperatureLow);
   let tempMin = document.querySelector("#temp-min");
   tempMin.innerHTML = apiTempMin;
 
@@ -69,6 +73,11 @@ function showWeatherData(response) {
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  let unitSignOne = document.querySelector("#unit-sign-one");
+  unitSignOne.innerHTML = "C";
+  let unitSignTwo = document.querySelector("#unit-sign-two");
+  unitSignTwo.innerHTML = "C";
 }
 
 function search(city) {
@@ -84,10 +93,41 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-search("Vienna");
-
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit);
+
+function convertTemperature(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = Math.round((defaultTemperature * 9) / 5 + 32);
+  let currentTemperature = document.querySelector("#temperature");
+  currentTemperature.innerHTML = fahrenheitTemperature;
+
+  let fahrenheitTemperatureHigh = Math.round(
+    (defaultTemperatureHigh * 9) / 5 + 32
+  );
+  let currentTemperatureHigh = document.querySelector("#temp-max");
+  currentTemperatureHigh.innerHTML = fahrenheitTemperatureHigh;
+
+  let fahrenheitTemperatureLow = Math.round(
+    (defaultTemperatureLow * 9) / 5 + 32
+  );
+  let currentTemperatureLow = document.querySelector("#temp-min");
+  currentTemperatureLow.innerHTML = fahrenheitTemperatureLow;
+
+  let unitSignOne = document.querySelector("#unit-sign-one");
+  unitSignOne.innerHTML = "F";
+  let unitSignTwo = document.querySelector("#unit-sign-two");
+  unitSignTwo.innerHTML = "F";
+}
+
+let defaultTemperature = "null";
+let defaultTemperatureHigh = "null";
+let defaultTemperatureLow = "null";
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", convertTemperature);
+
+search("Vienna");
 
 function showCurrentCity(event) {
   function showPosition(position) {
@@ -99,7 +139,7 @@ function showCurrentCity(event) {
     function showCurrentWeatherData(response) {
       console.log(response.data);
       let apiCityName = response.data.name;
-      let cityName = document.querySelector("#current-city");
+      let cityName = document.querySelector("#city");
       cityName.innerHTML = `<strong>${apiCityName}</strong>`;
 
       let apiCelciusTemperature = Math.round(response.data.main.temp);
