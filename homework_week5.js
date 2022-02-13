@@ -168,7 +168,7 @@ function showCurrentCity(event) {
       console.log(response.data);
       let apiCityName = response.data.name;
       let cityName = document.querySelector("#city");
-      cityName.innerHTML = `<strong>${apiCityName}</strong>`;
+      cityName.innerHTML = `${apiCityName}`;
 
       let apiCelciusTemperature = Math.round(response.data.main.temp);
       let celciusTemperature = document.querySelector("#temperature");
