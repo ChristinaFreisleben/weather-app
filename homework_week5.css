@@ -1,6 +1,6 @@
 body {
   font-family: "Nunito", sans-serif;
-  color: #f9f9f9;
+  color: #5f6caf;
 }
 
 h1,
@@ -9,7 +9,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #ff7a8a;
+  color: #00204a;
 }
 
 h1,
@@ -41,16 +41,16 @@ li {
 }
 
 a {
-  color: #f9f9f9;
+  color: #5f6caf;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ff7a8a;
+  color: #00204a;
 }
 
 a.active {
-  color: #ff7a8a;
+  color: #00204a;
 }
 
 a.active:hover {
@@ -68,8 +68,8 @@ div.col-4 {
 
 #current-city-button {
   display: inline;
-  background-color: rgb(9, 54, 94);
-  color: #ff7a8a;
+  background-color: transparent;
+  color: #00204a;
   border: none;
   margin-right: 20px;
   margin-left: -8px;
@@ -81,14 +81,14 @@ div.col-4 {
 }
 
 #search-button {
-  border: 2px solid rgba(255, 122, 138);
+  border: 2px solid #00204a;
   background-color: rgba(255, 255, 255, 50%);
   border-radius: 5px;
 }
 
 #search-button:hover {
-  border: 2px solid rgba(255, 122, 138, 70%);
-  background-color: rgba(255, 122, 138);
+  border: 2px solid #00204a;
+  background-color: #fcd6e2;
   transition: all 200ms ease-in-out;
 }
 
@@ -126,7 +126,8 @@ div.col-4 {
 
 .card {
   margin: 100px auto;
-  background-color: rgb(9, 54, 94);
+  border: 1px solid #00204a;
+  background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 
 .row-cols-5 {
