@@ -119,15 +119,6 @@ div.col-4 {
   text-align: center;
 }
 
-.defaultCities {
-  margin-right: 200px;
-}
-
-.forecast-emoji {
-  color: grey;
-  font-size: 20px;
-}
-
 .card {
   margin: 100px auto;
   border: none;
@@ -138,15 +129,15 @@ div.col-4 {
   text-align: center;
 }
 
+.date {
+  font-size: 17px;
+}
+
 .weatherdetails {
-  font-size: smaller;
+  font-size: 14px;
   margin-bottom: 30px;
 }
 
-.fa-cloud-sun {
-  color: #ffb611;
-}
-
-.fa-snowflake {
-  color: lightskyblue;
+.weather-forecast-temperature-max {
+  color: #00204a;
 }
