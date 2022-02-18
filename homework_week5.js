@@ -37,12 +37,12 @@ currentTime.innerHTML = `${hour}:${minutes}`;
 
 function displayForecast() {
   let forecast = document.querySelector("#forecast");
-  let forecastHTML = `<div class="row">`;
+  let forecastHTML = `<div class="row row-col-5">`;
   let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
   days.forEach(function (day) {
     forecastHTML =
       forecastHTML +
-      `<div class="col-2">
+      `<div class="col">
               <div class="weather-forecast-date"><h5>
                 ${day}</h5></div>
                 <img src="" alt="" width="42" />
