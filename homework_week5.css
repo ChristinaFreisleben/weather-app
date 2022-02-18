@@ -115,6 +115,10 @@ div.col-4 {
   font-size: 20px;
 }
 
+#forecast {
+  text-align: center;
+}
+
 .defaultCities {
   margin-right: 200px;
 }

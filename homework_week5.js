@@ -35,6 +35,25 @@ let currentTime = document.querySelector("#current-time");
 
 currentTime.innerHTML = `${hour}:${minutes}`;
 
+function displayForecast() {
+  let forecast = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Friday", "Saturday", "Sunday", "Monday", "Tuesday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2">
+              <div class="weather-forecast-date"><h5>
+                ${day}</h5></div>
+                <img src="" alt="" width="42" />
+                <div class="weather-forecast-temperatures"><span class="weather-forecast-temperature-max"><strong>2°</strong></span> | <span class="weather-forecast-temperature-min">-1°</span>
+              </div>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 function showWeatherData(response) {
   let apiCity = response.data.name;
   let city = document.querySelector("#city");
@@ -80,6 +99,8 @@ function showWeatherData(response) {
   unitSignTwo.innerHTML = "C";
   celciusLink.classList.add("active");
   fahrenheitLink.classList.remove("active");
+
+  displayForecast();
 }
 
 function search(city) {
