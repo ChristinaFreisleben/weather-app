@@ -63,7 +63,7 @@ p.detail-nav {
 }
 
 div.col-4 {
-  margin-left: -25px;
+  margin-left: -30px;
 }
 
 #current-city-button {
@@ -125,8 +125,10 @@ div.col-4 {
   background: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
 }
 
-.row-cols-5 {
+.row-col-5 {
   text-align: center;
+  padding-top: 5px;
+  padding-bottom: 10px;
 }
 
 .date {
@@ -140,4 +142,5 @@ div.col-4 {
 
 .weather-forecast-temperature-max {
   color: #00204a;
+  margin-bottom: 50px;
 }

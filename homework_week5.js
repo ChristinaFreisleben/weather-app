@@ -47,7 +47,6 @@ function formatDay(timestamp) {
     "Friday",
     "Saturday",
   ];
-
   return days[day];
 }
 
@@ -68,9 +67,9 @@ function displayForecast(response) {
                 }@2x.png" alt="weather icon" width="60" />
                 <div class="weather-forecast-temperatures"><span class="weather-forecast-temperature-max"><strong>${Math.round(
                   forecastDay.temp.max
-                )}°</strong></span> | <span class="weather-forecast-temperature-min">${Math.round(
+                )} C°</strong></span> | <span class="weather-forecast-temperature-min">${Math.round(
           forecastDay.temp.min
-        )}°</span>
+        )} C°</span>
               </div>
             </div>`;
     }
