@@ -108,11 +108,12 @@ div.col-4 {
 
 #source-code {
   text-align: center;
-  color: #113a5d;
+  color: #00204a;
 }
 
 #units {
   font-size: 20px;
+  color: #5f6caf;
 }
 
 #forecast {
